@@ -14,6 +14,8 @@
 
 SAM_ROOT := $(call my-dir)
 
+ifneq ($(filter i9300,$(TARGET_DEVICE)),)
+
 # Exynos 4
 ifeq ($(TARGET_BOARD_PLATFORM),exynos4)
 ifeq ($(TARGET_SOC),exynos4210)
@@ -36,4 +38,6 @@ endif
 
 ifeq ($(BOARD_VENDOR),samsung)
 include $(SAM_ROOT)/ril/Android.mk
+endif
+
 endif
