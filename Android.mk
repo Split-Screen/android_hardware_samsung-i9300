@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifneq ($(filter i9300,$(TARGET_DEVICE)),)
+
 SAM_ROOT := $(call my-dir)
 
 # Exynos 4
@@ -36,4 +38,6 @@ endif
 
 ifeq ($(BOARD_VENDOR),samsung)
 include $(SAM_ROOT)/ril/Android.mk
+endif
+
 endif
